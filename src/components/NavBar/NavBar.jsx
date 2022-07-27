@@ -57,10 +57,7 @@ const Navbar = () => {
 							color="inherit"
 							startIcon={<Lock />}
 							onClick={() => {
-								dispatch({
-									type: 'UPDATE_USER',
-									payload: user,
-								});
+								dispatch({ type: 'OPEN_LOGIN' });
 							}}
 						>
 							Login
