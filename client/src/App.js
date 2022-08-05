@@ -3,6 +3,7 @@ import NavBar from './components/NavBar/NavBar';
 import Login from './components/User/Login';
 import Notification from './components/UI/Notification';
 import Loading from './components/UI/Loading';
+import BottomNav from './components/NavBar/BottomNav';
 
 const App = () => {
 	return (
@@ -11,6 +12,7 @@ const App = () => {
 			<Notification />
 			<Login />
 			<NavBar />
+			<BottomNav />
 		</>
 	);
 };
