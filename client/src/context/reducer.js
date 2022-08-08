@@ -32,6 +32,13 @@ const reducer = (state, action) => {
 					(image) => image !== action.payload
 				),
 			};
+		case 'UPDATE_DETAILS':
+			return {
+				...state,
+				details: { ...state.details, ...action.payload },
+			};
+		case 'UPDATE_LOCATION':
+			return { ...state, location: action.payload };
 
 		default:
 			throw new Error('No matched action!');
