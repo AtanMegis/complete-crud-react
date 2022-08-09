@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	AppBar,
 	Box,
@@ -9,17 +9,17 @@ import {
 	Typography,
 } from '@mui/material';
 import { Lock, Menu } from '@mui/icons-material';
-// import photoURL from '../../assets/photoURL.jpeg';
+
 import { useValue } from '../../context/ContextProvider';
 import UserIcons from '../User/UserIcons';
-
-// const user = { name: 'Christian Megis', photoURL };
+import Sidebar from '../Sidebar/Sidebar';
 
 const Navbar = () => {
 	const {
 		state: { currentUser },
 		dispatch,
 	} = useValue();
+	const [isOpen, setIsOpen] = useState(false);
 
 	return (
 		<>
@@ -27,7 +27,11 @@ const Navbar = () => {
 				<Container maxWidth="lg">
 					<Toolbar disableGutters>
 						<Box sx={{ mr: 1 }}>
-							<IconButton size="large" color="inherit">
+							<IconButton
+								size="large"
+								color="inherit"
+								onClick={() => setIsOpen(true)}
+							>
 								<Menu />
 							</IconButton>
 						</Box>
@@ -70,6 +74,7 @@ const Navbar = () => {
 				</Container>
 			</AppBar>
 			<Toolbar />
+			<Sidebar {...{ isOpen, setIsOpen }} />
 		</>
 	);
 };
