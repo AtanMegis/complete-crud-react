@@ -25,10 +25,7 @@ const AddDetails = () => {
 		if (costType === 0) {
 			dispatch({ type: 'UPDATE_DETAILS', payload: { price: 0 } });
 		} else {
-			dispatch({
-				type: 'UPDATE_DETAILS',
-				payload: { price: `100.000` },
-			});
+			dispatch({ type: 'UPDATE_DETAILS', payload: { price: 15 } });
 		}
 	};
 	const handlePriceChange = (e) => {
@@ -67,17 +64,19 @@ const AddDetails = () => {
 					/>
 					{Boolean(costType) && (
 						<TextField
-							sx={{ width: '12.5ch !important' }}
+							sx={{ width: '7ch !important' }}
 							variant="standard"
 							InputProps={{
 								startAdornment: (
 									<InputAdornment position="start">
-										Rp.
+										$
 									</InputAdornment>
 								),
 							}}
 							inputProps={{
-								type: 'text',
+								type: 'number',
+								min: 1,
+								max: 50,
 							}}
 							value={price}
 							onChange={handlePriceChange}
