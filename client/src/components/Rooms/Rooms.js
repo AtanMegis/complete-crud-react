@@ -22,8 +22,8 @@ const Rooms = () => {
 				gap={12}
 				sx={{
 					mb: 8,
-					gridTemplateColumns:
-						'repeat(auto-fill, minmax(280px, 1fr))!important',
+					gridTemplateRows:
+						'repeat(auto-fill, minmax(280px, 350px))!important',
 				}}
 			>
 				{filteredRooms.map((room) => (

@@ -73,7 +73,6 @@ const Room = () => {
 					</IconButton>
 				</Toolbar>
 			</AppBar>
-			// * SLIDER
 			<Container>
 				<Swiper
 					modules={[
