@@ -14,6 +14,7 @@ import { StarBorder } from '@mui/icons-material';
 const Rooms = () => {
 	const {
 		state: { filteredRooms },
+		dispatch,
 	} = useValue();
 	return (
 		<Container>
@@ -53,6 +54,12 @@ const Rooms = () => {
 								alt={room.title}
 								loading="lazy"
 								style={{ cursor: 'pointer' }}
+								onClick={() =>
+									dispatch({
+										type: 'UPDATE_ROOM',
+										payload: room,
+									})
+								}
 							/>
 							<ImageListItemBar
 								title={room.title}
